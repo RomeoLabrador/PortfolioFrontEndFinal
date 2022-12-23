@@ -1,0 +1,34 @@
+.box{
+    padding: 20px;
+    padding-top: 40px;
+    width: max-content;
+    background-color:#48403c;
+    box-shadow: 10px 10px 3px rgba(0, 0, 0, 0.5);
+
+}
+
+.but{
+    margin-top: 20px;
+    box-shadow: 10px 10px 3px rgba(0, 0, 0, 0.5);
+}
+
+input{
+    color: #48403c;
+    font-weight: bold;
+}
+
+label{
+    color: #DF5D3F;
+}
+h2{
+    color: #DF5D3F;
+}
+
+button{
+    background-color: #DF5D3F;
+    height: 40px;
+    }
+p{
+        font-weight: bold;
+        color:#F5F2EC;
+    }

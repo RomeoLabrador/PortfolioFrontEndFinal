@@ -1,0 +1,18 @@
+<div class = "block text-center rounded">
+    <h2 style = "padding-bottom: 10px;">Titulo</h2>
+    <img src="../../../../assets/res/unknown.jpg">
+    <div class = "descripcion">
+        <p>Lorem, ipsum dolor sit amet clitgsagasgasgsa</p>
+    </div>
+
+    <div *ngIf="servicio.show == 1">
+        <button class = "btn btn" (click)="eliminar()"><img src="../../../../assets/res/eliminar.png" 
+            class = "rounded-circle" 
+            style = "width: 30px; height: 30px;"></button>   
+        <button class = "btn btn" (click) = "guardar()"><img src="../../../../assets/res/Guardar.png" 
+            class = "rounded-circle" 
+            style = "width: 30px; height: 30px;"></button>
+        
+        </div>
+</div>
+    

@@ -1,0 +1,1 @@
+https://es.stackoverflow.com/questions/434152/error-content-type-text-plaincharset-utf-8-not-supported-en-springboot

@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div>
+            <form  #f="ngForm" (ngSubmit)="onCreate()" novalidate >
+                <div class = "form-group">
+                    <label for = "nombreH">Nueva Habilidad Nombre</label>
+                    <input type = "text" class = "form-control" id="nombreH" name = "nombreH" [(ngModel)]="nombreH" required = "">
+                    <label for = "descripcionH">Pequeña Descripcion</label>
+                    <input type = "text" class = "form-control" id="descripcionH" name = "descripcionH" [(ngModel)]="descripcionH" required = "">
+                    <label for = "cantidad">Ingrese Cantidad</label>
+                    <input type = "number" class = "form-control" id="cantidad" name = "cantidad" [(ngModel)]="cantidad" required = "">
+                </div>
+                <button class = "btn btn-danger">
+                    Agregar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+

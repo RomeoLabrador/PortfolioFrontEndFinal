@@ -1,0 +1,32 @@
+img{
+    width: 200px;
+}
+.container{
+    width: 900px;
+    border:3px solid #DF5D3F;
+    padding: 10px;
+    background-color:#48403c;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    box-shadow: 10px 10px 3px rgba(0, 0, 0, 0.5);
+}
+
+h2{
+    text-align: left;
+    font-size: 35px;
+    color:#DF5D3F;
+    font-weight: bold;
+}
+
+p{
+    text-align: left;
+    font-size: 25px;
+    line-height: 25px;
+    color: #f5f2ec;
+    font-weight: bold;
+}
+
+.little{
+    width: 50px;
+}
+

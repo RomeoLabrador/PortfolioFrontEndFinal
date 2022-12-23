@@ -1,0 +1,33 @@
+img{
+    width: 200px;
+}
+.container{
+    width: 900px;
+    border:3px solid #DF5D3F;
+    padding: 10px;
+    background-color:#48403c;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h2{
+    text-align: left;
+    font-size: 35px;
+    color:#DF5D3F;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+p{
+    text-align: left;
+    font-size: 20px;
+    line-height: 25px;
+    color: #f5f2ec;
+    font-weight: bold;
+}
+.progress{
+    width: 500px;
+}
+.progress-bar{
+    background-color:#DF5D3F;
+}

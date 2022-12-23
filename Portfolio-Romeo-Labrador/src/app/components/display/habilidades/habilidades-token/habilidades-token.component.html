@@ -1,0 +1,30 @@
+<ul>
+    
+    <li *ngFor="let habi of habildad">
+        <h2>{{habi.nombreH}}</h2>
+        <p>{{habi.descripcionH}}</p>
+
+        <ngb-progressbar
+      type="danger"
+      [max]="100"
+      [value]="habi.cantidad"
+      height="20px"
+      
+    ></ngb-progressbar>
+        
+        
+    <div *ngIf="isLogged" style="text-align: left;padding: 5px;">
+    <button class = "btn btn" routerLink="/editarhabilidad/{{habi.id}}"><img src="../../../../assets/res/edit.png" 
+          class = "rounded-circle" 
+          style = "width: 30px;"></button>
+    <button class = "btn btn" (click)="Delete(habi.id)"><img src="../../../../assets/res/eliminar.png " 
+          class = "rounded-circle" 
+          style = "width: 30px;"></button>   
+    
+  
+     </div></li>
+
+     <button type = "button" routerLink="/nuevahabilidad" *ngIf="isLogged">
+        nueva Habilidad
+    </button>
+</ul>

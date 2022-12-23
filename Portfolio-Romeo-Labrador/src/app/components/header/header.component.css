@@ -1,0 +1,13 @@
+app-social{
+    float: right;
+    margin: 15px;
+    margin-right: 25px;
+}
+app-login-button{
+    float: right;
+    margin-top: 25px;
+    margin-right: 15px;
+}
+header{
+    background-color:#48403c;
+}

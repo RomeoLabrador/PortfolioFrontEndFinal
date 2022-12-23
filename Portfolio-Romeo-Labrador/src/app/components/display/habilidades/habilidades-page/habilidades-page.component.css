@@ -1,0 +1,28 @@
+.container{
+    width: 1100px;
+    height: flex;
+    border:3px solid #DF5D3F;
+    padding: 10px;
+    background-color:#48403c;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 15px 15px 3px rgba(0, 0, 0, 0.5);
+}
+img{
+    height:600px;
+    margin:5px;
+    float: left;
+    padding: 30px;
+}
+ul{
+    padding-top:5px ;
+    list-style-type: none;
+}
+
+p{
+    text-align: left;
+    font-size: 25px;
+    line-height: 25px;
+    color: #f5f2ec;
+    font-weight: bold;
+}
