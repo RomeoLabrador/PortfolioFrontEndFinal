@@ -1,4 +1,20 @@
-<div class = "block text-center rounded">
-    <button class = "btn btn" style="padding-top: 100px;" (click)="agregar()"><img src = "../../../../../assets/res/add.png" style="width: 100px; height: 100px;"></button>
+<div class="container">
+    <div class="row">
+        <div>
+            <h1>AGREGAR CERTIFICADO</h1>
+            <form  #f="ngForm" (ngSubmit)="onCreate()" novalidate >
+                <div class = "form-group">
+                    <label for = "nombreH">Titulo del Certificado</label>
+                    <input type = "text" class = "form-control" id="nombreC" name = "nombreC" [(ngModel)]="nombreC" required = "">
+                    <label for = "descripcionH">Descripcion</label>
+                    <input type = "text" class = "form-control" id="descripcionC" name = "descripcionC" [(ngModel)]="descripcionC" required = "">
+                
+                </div>
+                <button class = "btn btn-danger">
+                    Agregar
+                </button>
+            </form>
+        </div>
+    </div>
 </div>
     

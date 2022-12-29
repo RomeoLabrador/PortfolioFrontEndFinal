@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DesplazamientoService } from 'src/app/components/desplazamiento.service';
+import { Estudios } from 'src/app/model/estudios';
+import { EstudiosService } from 'src/app/service/estudios.service';
 
 @Component({
   selector: 'app-est-token-edit',
@@ -8,13 +11,26 @@ import { DesplazamientoService } from 'src/app/components/desplazamiento.service
 })
 export class EstTokenEditComponent implements OnInit {
 
-  constructor(protected servicio:DesplazamientoService) { }
+  nombreE:string;
+  descripcionE:string;
 
-  agregar(){
-    this.servicio.Agregar.emit();
-  }
+  constructor(protected servicio:DesplazamientoService,private estudiosS:EstudiosService, private router:Router) { }
+
 
   ngOnInit(): void {
+  }
+
+  onCreate():void{
+    const estudio = new Estudios(this.nombreE, this.descripcionE);
+    this.estudiosS.save(estudio).subscribe(
+      data => {
+        alert("Se creo el estudio");
+        this.router.navigate(['']);
+      },err =>{
+        alert("hubo un fallo");
+        this.router.navigate(['']);
+      }
+    )
   }
 
 }

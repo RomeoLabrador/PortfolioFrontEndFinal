@@ -1,19 +1,24 @@
+
+<div *ngFor="let estudio of estudios">
 <div class = "container rounded">
     <div class = "row">
-        <div class = "col-md-3"><img src="../../../../assets/res/unknown.jpg" class = "rounded-circle"></div>
+        <div class = "col-md-3"><img style="width: 200px; height: 200px;" src="../../../../assets/res/unknown.jpg" class = "rounded-circle"></div>
         <div class = "col-md-9">
-            <h2>Titulo</h2>
-            <p>Lorem, ipsum dolor sit amet consectetu architecto ullam corporis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut consequatur atque dolor necessitatibus deleniti consequuntur reprehenderit temporibus ab mod</p></div>
+            <h2>{{estudio.nombreE}}</h2>
+            <p>{{estudio.descripcionE}}</p></div>
     </div>
 
-    <div *ngIf="servicio.show == 1">
-    <button class = "btn btn" (click)="eliminar()"><img src="../../../../assets/res/eliminar.png" 
-        class = "rounded-circle" 
-        style = "width: 30px;"></button>   
-    <button class = "btn btn" (click) = "guardar()"><img src="../../../../assets/res/Guardar.png" 
+    <div *ngIf="isLogged">
+    <button class = "btn btn" routerLink="/editarestudio/{{estudio.id}}"><img src="../../../../assets/res/edit.png" 
         class = "rounded-circle" 
         style = "width: 30px;"></button>
+    <button class = "btn btn" (click)="borrar(estudio.id)"><img src="../../../../assets/res/eliminar.png" 
+        class = "rounded-circle" 
+        style = "width: 30px;"></button>   
+    
     
     </div>
 
 </div>
+</div>
+<button *ngIf="isLogged" class = "btn btn container" routerLink="/nuevoestudio" ><img style="width: 100px;" src = "../../../../assets/res/add.png"></button>

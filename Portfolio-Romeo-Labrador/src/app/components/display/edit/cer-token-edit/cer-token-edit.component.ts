@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DesplazamientoService } from 'src/app/components/desplazamiento.service';
+import { Certificados } from 'src/app/model/certificados';
+import { CertificadosService } from 'src/app/service/certificados.service';
 
 @Component({
   selector: 'app-cer-token-edit',
@@ -8,11 +11,26 @@ import { DesplazamientoService } from 'src/app/components/desplazamiento.service
 })
 export class CerTokenEditComponent implements OnInit {
 
-  agregar(){}
+  nombreC: string;
+  descripcionC:string;
 
-  constructor(private servicio:DesplazamientoService) { }
+
+  constructor(private servicio:DesplazamientoService,private certificadosS:CertificadosService, private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  onCreate():void{
+    const certificado = new Certificados(this.nombreC, this.descripcionC);
+    this.certificadosS.save(certificado).subscribe(
+      data => {
+        alert("Se creo el Certificado");
+        this.router.navigate(['']);
+      },err =>{
+        alert("hubo un fallo");
+        this.router.navigate(['']);
+      }
+    )
   }
 
 }

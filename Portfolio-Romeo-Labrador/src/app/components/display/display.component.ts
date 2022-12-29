@@ -22,17 +22,17 @@ export class DisplayComponent implements OnInit {
   ngOnInit(): void {
     this.servicio.Ejecutar0.subscribe(data => {
       this.a = 0;
-      console.log("Conexion exitosa");
+    
     })
 
     this.servicio.Ejecutar1.subscribe(data =>{
       this.a = 1;
-      console.log("conexion exitosa")
+      
     })
 
     this.servicio.Ejecutar2.subscribe(data =>{
       this.a = 2;
-      console.log("conexion exitosa")
+      
     })
 
     this.servicio.LoginSuccess.subscribe(data => {

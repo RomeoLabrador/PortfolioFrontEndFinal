@@ -1,0 +1,19 @@
+<div class="container" *ngIf="estudios">
+    <div class="row">
+        <div>
+            <h1>EDITAR ESTUDIO</h1>
+            <form  #f="ngForm" (ngSubmit)="onUpdate()" novalidate >
+                <div class = "form-group">
+                    <label for = "nombreH">Nombre Estudio</label>
+                    <input type = "text" class = "form-control" id="nombreH" name = "nombreH" [(ngModel)]="estudios.nombreE" required = "">
+                    <label for = "descripcionH">Descripcion</label>
+                    <input type = "text" class = "form-control" id="descripcionH" name = "descripcionH" [(ngModel)]="estudios.descripcionE" required = "">
+                
+                </div>
+                <button class = "btn btn-danger">
+                    Agregar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

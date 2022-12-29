@@ -1,4 +1,7 @@
 import { Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { Estudios } from 'src/app/model/estudios';
+import { EstudiosService } from 'src/app/service/estudios.service';
+import { TokenService } from 'src/app/service/token.service';
 import { DesplazamientoService } from '../../desplazamiento.service';
 
 @Component({
@@ -8,27 +11,42 @@ import { DesplazamientoService } from '../../desplazamiento.service';
 })
 export class EstudiosTokenComponent implements OnInit {
 
+  estudios:Estudios[] = [];
 
-  constructor(protected servicio:DesplazamientoService) { }
+  constructor(protected servicio:DesplazamientoService,private estudiosS:EstudiosService, private tokenService:TokenService) { }
 
-  eliminar(){
-    this.servicio.Borrar.emit();
-  }
+  isLogged = false;
 
-  guardar(){
-    
-  }
-
+  
   ngOnInit(): void {
-
-    this.servicio.LoginSuccess.subscribe(data => {
-      this.servicio.show = 1;
-    })
-
-
-
+    this.cargarEstudios();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    } else{
+      this.isLogged = false;
+    }
   }
 
-  descripcion:string = 'Descripcion del Estudio'
+  cargarEstudios():void{
+    this.estudiosS.lista().subscribe(
+      data =>{
+        this.estudios = data;
+      }
+    )
+  }
+
+  borrar(id?:number){
+    if(id != undefined){
+      this.estudiosS.delete(id).subscribe(
+        data =>{
+          this.cargarEstudios();
+        }, err => {
+          alert("no se pudo eliminar el estudio");
+        }
+      )
+    }
+  }
+
+  
 
 }

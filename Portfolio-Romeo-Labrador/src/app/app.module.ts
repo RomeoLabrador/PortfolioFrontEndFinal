@@ -33,6 +33,8 @@ import { PersonaPruebaComponent } from './model/persona-prueba/persona-prueba.co
 import { interceptorProvider, InterceptorService } from './service/interceptor-service';
 import { HabTokenEditComponent } from './components/display/edit/hab-token-edit/hab-token-edit.component';
 import { HabEditComponent } from './components/display/edit/hab-token-edit/hab-edit.component';
+import { EstEditComponent } from './components/display/edit/est-token-edit/est-edit/est-edit.component';
+import { CerEditComponent } from './components/display/edit/cer-token-edit/cer-edit.component';
 
 
 @NgModule({
@@ -62,7 +64,9 @@ import { HabEditComponent } from './components/display/edit/hab-token-edit/hab-e
     CerTokenEditComponent,
     PersonaPruebaComponent,
     HabTokenEditComponent,
-    HabEditComponent
+    HabEditComponent,
+    EstEditComponent,
+    CerEditComponent
   ],
   imports: [
     BrowserModule,

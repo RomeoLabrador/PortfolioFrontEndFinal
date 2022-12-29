@@ -1,12 +1,7 @@
 <section>
     <div class = "text-center">
         <div *ngIf="a == 0">
-            <ul *ngFor="let item of lista1">
-            <li><app-estudios-token></app-estudios-token></li>
-            </ul>
-            <ul>
-            <li *ngIf="this.servicio.show == 1"><app-est-token-edit></app-est-token-edit></li>
-            </ul>
+            <app-estudios-token></app-estudios-token>
         </div>
         <div *ngIf="a == 1">
             <app-habilidades-page></app-habilidades-page>
