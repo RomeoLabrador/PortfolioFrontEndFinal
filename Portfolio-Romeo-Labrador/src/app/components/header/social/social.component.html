@@ -1,2 +1,7 @@
-<a href = "https://github.com/RomeoLabrador"><img src="../../../../assets/res/github.png"></a>
-<a href = "https://www.linkedin.com/in/romeo-labrador-keiner-b316a9248"><img src="../../../../assets/res/linkedin.png"></a>
+<div *ngFor="let soci of social">
+
+<a href = "{{soci.github}}"><img src="../../../../assets/res/github.png"></a>
+<a href = "{{soci.linkedin}}"><img src="../../../../assets/res/linkedin.png"></a>
+<button *ngIf="isLogged" class = "btn btn" routerLink="/editarsocial/{{soci.id}}"><img class = "rounded-circle" style="width: 30px;height: 30px;" src="../../../../assets/res/edit.png"></button>
+
+</div>

@@ -1,0 +1,19 @@
+<div class="container" *ngIf="social">
+    <div class="row">
+        <div>
+            <h1>EDITAR PRESENTACION</h1>
+            <form  #f="ngForm" (ngSubmit)="onUpdate()" novalidate >
+                <div class = "form-group">
+                    <label for = "github">GITHUB</label>
+                    <input type = "text" class = "form-control" id="github" name = "github" [(ngModel)]="social.github" required = "">
+                    <label for = "linkedin">GITHUB</label>
+                    <input type = "text" class = "form-control" id="linkedin" name = "linkedin" [(ngModel)]="social.linkedin" required = "">
+                
+                </div>
+                <button class = "btn btn-danger">
+                    Agregar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

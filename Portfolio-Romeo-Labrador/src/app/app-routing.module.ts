@@ -8,6 +8,8 @@ import { EstEditComponent } from './components/display/edit/est-token-edit/est-e
 import { EstTokenEditComponent } from './components/display/edit/est-token-edit/est-token-edit.component';
 import { HabEditComponent } from './components/display/edit/hab-token-edit/hab-edit.component';
 import { HabTokenEditComponent } from './components/display/edit/hab-token-edit/hab-token-edit.component';
+import { PresentEditComponent } from './components/header/presentacion/present-edit.component';
+import { EditSocialComponent } from './components/header/social/edit-social.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { LogindisplayComponent } from './login/logindisplay/logindisplay.component';
@@ -22,6 +24,8 @@ const routes: Routes = [
   {path:"editarestudio/:id", component:EstEditComponent},
   {path:"nuevocertificado", component:CerTokenEditComponent},
   {path:"editarcertificado/:id", component:CerEditComponent},
+  {path:"editarpresentacion/:id", component:PresentEditComponent},
+  {path:"editarsocial/:id", component:EditSocialComponent},
 ];
 
 @NgModule({

@@ -35,6 +35,8 @@ import { HabTokenEditComponent } from './components/display/edit/hab-token-edit/
 import { HabEditComponent } from './components/display/edit/hab-token-edit/hab-edit.component';
 import { EstEditComponent } from './components/display/edit/est-token-edit/est-edit/est-edit.component';
 import { CerEditComponent } from './components/display/edit/cer-token-edit/cer-edit.component';
+import { PresentEditComponent } from './components/header/presentacion/present-edit.component';
+import { EditSocialComponent } from './components/header/social/edit-social.component';
 
 
 @NgModule({
@@ -66,7 +68,9 @@ import { CerEditComponent } from './components/display/edit/cer-token-edit/cer-e
     HabTokenEditComponent,
     HabEditComponent,
     EstEditComponent,
-    CerEditComponent
+    CerEditComponent,
+    PresentEditComponent,
+    EditSocialComponent
   ],
   imports: [
     BrowserModule,
