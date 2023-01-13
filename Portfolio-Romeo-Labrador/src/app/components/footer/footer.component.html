@@ -1,8 +1,8 @@
 <section>
-    <footer class = "text-center">
+    <footer class = "text-center" *ngFor="let nombre of presentacion">
 
-        <h2 class="u"> Romeo L. Keiner | @ ArgentinaPrograma</h2>
-        <h3 class = "u">  Buenos Aires, Argentina</h3>
+        <h2 class="u"> {{this.nombre.nombre}} | @ ArgentinaPrograma</h2>
+        <h3 class = "u">Proyecto Portfolio</h3>
 
     </footer>
 </section>

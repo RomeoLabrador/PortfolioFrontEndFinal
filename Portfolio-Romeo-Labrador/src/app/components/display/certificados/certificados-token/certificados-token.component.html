@@ -1,26 +1,27 @@
 <div class = "container">
 <div class = "row">
-    <div class = "col" *ngFor="let certi of certificados">
+<div class = "col" *ngFor="let certi of certificados">
 <div class = "block text-center rounded">
-    <h2 style = "padding-bottom: 10px;">{{certi.nombreC}}</h2>
-    <img class = "image" src="../../../../assets/res/unknown.jpg">
+    <h2>{{certi.nombreC}}</h2>
+    <img class = "image" src="{{certi.img}}" style="margin-bottom:5px ;">
     <div class = "descripcion">
         <p>{{certi.descripcionC}}</p>
     </div>
 
-    <div *ngIf="isLogged">
-        <button class = "btn btn" routerLink="/editarcertificado/{{certi.id}}"><img src="../../../../../assets/res/edit.png" 
-            class = "rounded-circle" 
-            style = "width: 30px; height: 30px;"></button>
-        <button class = "btn btn" (click)="delete(certi.id)"><img src="../../../../../assets/res/eliminar.png" 
-            class = "rounded-circle" 
-            style = "width: 30px; height: 30px;"></button>   
-        
-        
-        </div>
+    
+</div>
+<div *ngIf="isLogged" class = "text-center">
+    <button class = "btn btn" routerLink="/editarcertificado/{{certi.id}}"><img src="../../../../../assets/res/edit.png" 
+        class = "rounded-circle" 
+        style = "width: 30px; height: 30px;box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);"></button>
+    <button class = "btn btn" (click)="delete(certi.id)"><img src="../../../../../assets/res/eliminar.png" 
+        class = "rounded-circle" 
+        style = "width: 30px; height: 30px;box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);"></button>   
+    
+    
 </div>
 </div>
 
-<button *ngIf="isLogged" class = "btn btn block" routerLink="/nuevocertificado" ><img style = "width: 100px;"src = "../../../../assets/res/add.png"></button>
+<button *ngIf="isLogged" style = "margin-left: 10px;" class = "btn btn block" routerLink="/nuevocertificado" ><img style = "width: 100px;"src = "../../../../assets/res/add.png"></button>
 </div>   
 </div>

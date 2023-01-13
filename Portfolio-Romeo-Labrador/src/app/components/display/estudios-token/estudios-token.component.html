@@ -2,7 +2,7 @@
 <div *ngFor="let estudio of estudios">
 <div class = "container rounded">
     <div class = "row">
-        <div class = "col-md-3"><img style="width: 200px; height: 200px;" src="../../../../assets/res/unknown.jpg" class = "rounded-circle"></div>
+        <div class = "col-md-3"><img style="width: 200px; height: 200px;" src="{{estudio.img}}" class = "rounded-circle"></div>
         <div class = "col-md-9">
             <h2>{{estudio.nombreE}}</h2>
             <p>{{estudio.descripcionE}}</p></div>

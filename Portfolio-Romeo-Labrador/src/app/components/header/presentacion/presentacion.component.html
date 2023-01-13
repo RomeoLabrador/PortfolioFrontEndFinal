@@ -1,5 +1,5 @@
 <div class = "container text-center space" *ngFor="let present of presentacion">
-    <img src="../../../../assets/res/avatar.jpg" class = "rounded-circle">
+    <img src={{present.img}} class = "rounded-circle">
     <p>Hola, soy {{present.nombre}}<br>{{present.descripcion}}</p>
     
 

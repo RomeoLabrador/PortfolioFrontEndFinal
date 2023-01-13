@@ -1,15 +1,18 @@
-<ul>
+<ul style="margin-left: 140px;list-style: none;">
     
     <li *ngFor="let habi of habildad">
-        <h2>{{habi.nombreH}}</h2>
+      <div class = "container">
+        <div class = "row">
+          <div class = "col-md-2"><span class = "dot"></span></div>
+          <div class = "col-md-10">
+        <h2 style="font-size: 25px;">{{habi.nombreH}}</h2>
         <p>{{habi.descripcionH}}</p>
 
         <ngb-progressbar
       type="danger"
       [max]="100"
       [value]="habi.cantidad"
-      height="20px"
-      
+      height="20px"      
     ></ngb-progressbar>
         
         
@@ -22,10 +25,13 @@
           style = "width: 30px;"></button>   
     
   
-     </div></li>
+     </div>
+    </div>
+    </div>
+    </div>
 
-     <button type = "button" class = "btn btn" routerLink="/nuevahabilidad" *ngIf="isLogged">
-      <img style="width: 100px;" src = "../../../../assets/res/add.png">
-    </button>
-
+    </li>
 </ul>
+<button type = "button" class = "btn btn" routerLink="/nuevahabilidad" *ngIf="isLogged">
+  <img style="width: 100px;" src = "../../../../assets/res/add.png">
+</button>

@@ -13,6 +13,7 @@ export class CerTokenEditComponent implements OnInit {
 
   nombreC: string;
   descripcionC:string;
+  img:string;
 
 
   constructor(private servicio:DesplazamientoService,private certificadosS:CertificadosService, private router:Router) { }
@@ -21,7 +22,7 @@ export class CerTokenEditComponent implements OnInit {
   }
 
   onCreate():void{
-    const certificado = new Certificados(this.nombreC, this.descripcionC);
+    const certificado = new Certificados(this.nombreC, this.descripcionC,this.img);
     this.certificadosS.save(certificado).subscribe(
       data => {
         alert("Se creo el Certificado");

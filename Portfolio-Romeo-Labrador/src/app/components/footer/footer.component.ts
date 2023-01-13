@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PresentacionService } from 'src/app/service/presentacion.service';
+import { Presentacion } from 'src/app/model/presentacion';
+
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  presentacion:Presentacion[] = []
+
+  constructor(private presentacionS:PresentacionService) { }
 
   ngOnInit(): void {
+    this.cargarPresentacion();
+  }
+
+  cargarPresentacion():void{
+    this.presentacionS.lista().subscribe(data => {this.presentacion = data;})
   }
 
 }

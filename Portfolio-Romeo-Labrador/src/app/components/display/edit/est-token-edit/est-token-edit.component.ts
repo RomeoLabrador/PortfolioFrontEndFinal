@@ -13,6 +13,7 @@ export class EstTokenEditComponent implements OnInit {
 
   nombreE:string;
   descripcionE:string;
+  img:string;
 
   constructor(protected servicio:DesplazamientoService,private estudiosS:EstudiosService, private router:Router) { }
 
@@ -21,7 +22,7 @@ export class EstTokenEditComponent implements OnInit {
   }
 
   onCreate():void{
-    const estudio = new Estudios(this.nombreE, this.descripcionE);
+    const estudio = new Estudios(this.nombreE, this.descripcionE,this.img);
     this.estudiosS.save(estudio).subscribe(
       data => {
         alert("Se creo el estudio");

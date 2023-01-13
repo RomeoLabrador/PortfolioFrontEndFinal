@@ -37,4 +37,8 @@ export class PresentEditComponent implements OnInit {
     )
   }
 
+  uploadImage($event:any){
+    
+  }
+
 }
