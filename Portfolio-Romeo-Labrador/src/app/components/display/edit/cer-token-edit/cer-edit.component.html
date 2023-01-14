@@ -9,7 +9,8 @@
                     <label for = "descripcionH">Descripcion</label>
                     <input type = "text" class = "form-control" id="descripcionC" name = "descripcionC" [(ngModel)]="certificados.descripcionC" required = "">
                     <label for = "img">Imagen</label>
-                    <input type = "text" class = "form-control" id="img" name = "img" [(ngModel)]="certificados.img" required = "">
+                    <input type = "file" class = "form-control" id="img" name = "img" [(ngModel)]="certificados.img" (change)="uploadImage($event)"
+                    accept=".jpg, .jpeg, .png">
                 
                 </div>
                 <button class = "btn btn-danger">

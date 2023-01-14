@@ -7,7 +7,7 @@ import { Habilidad } from '../model/habilidad';
   providedIn: 'root'
 })
 export class SHabilidadService {
-  habilidadURL = "http://localhost:8080/habilidades/"
+  habilidadURL = "https://portfoliobackend-production-cb23.up.railway.app/habilidades/"
 
   constructor(private httpClient:HttpClient,) { }
 

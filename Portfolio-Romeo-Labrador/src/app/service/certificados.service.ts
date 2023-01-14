@@ -7,7 +7,7 @@ import { Certificados } from '../model/certificados';
   providedIn: 'root'
 })
 export class CertificadosService {
-  URL = "http://localhost:8080/certificados/"
+  URL = "https://portfoliobackend-production-cb23.up.railway.app/certificados/"
 
   constructor(private httpClient:HttpClient) {}
 

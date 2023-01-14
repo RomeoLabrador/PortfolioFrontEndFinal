@@ -8,7 +8,7 @@ import { Presentacion } from '../model/presentacion';
 })
 export class PresentacionService {
 
-  URL = 'http://localhost:8080/presentacion/'
+  URL = 'https://portfoliobackend-production-cb23.up.railway.app/presentacion/'
 
   constructor(private httpClient:HttpClient) { }
 

@@ -37,6 +37,9 @@ import { EstEditComponent } from './components/display/edit/est-token-edit/est-e
 import { CerEditComponent } from './components/display/edit/cer-token-edit/cer-edit.component';
 import { PresentEditComponent } from './components/header/presentacion/present-edit.component';
 import { EditSocialComponent } from './components/header/social/edit-social.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 
 @NgModule({
@@ -77,7 +80,9 @@ import { EditSocialComponent } from './components/header/social/edit-social.comp
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
   ],
   providers: [DatePipe,DisplayComponent],
   bootstrap: [AppComponent]

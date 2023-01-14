@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Presentacion } from 'src/app/model/presentacion';
 import { PresentacionService } from 'src/app/service/presentacion.service';
+import { ImageService } from 'src/app/service/image.service';
 
 @Component({
   selector: 'app-present-edit',
@@ -12,7 +13,7 @@ export class PresentEditComponent implements OnInit {
 
   presentacion : Presentacion = null;
 
-  constructor(private presentacionS:PresentacionService,private activatedRouter:ActivatedRoute,private router:Router) { }
+  constructor(private presentacionS:PresentacionService,private activatedRouter:ActivatedRoute,private router:Router, public imageService:ImageService) { }
 
   ngOnInit(): void {
     const id = this.activatedRouter.snapshot.params['id'];
@@ -26,6 +27,7 @@ export class PresentEditComponent implements OnInit {
 
   onUpdate():void{
     const id = this.activatedRouter.snapshot.params['id']
+    this.presentacion.img = this.imageService.imagenes[0];
     this.presentacionS.update(id,this.presentacion).subscribe(
       data => {
         this.router.navigate(['']);
@@ -38,7 +40,10 @@ export class PresentEditComponent implements OnInit {
   }
 
   uploadImage($event:any){
-    
+    const id = this.activatedRouter.snapshot.params['id'];
+    const name = "foto_";
+    this.imageService.uploadImage($event,name)
+
   }
 
 }

@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class SocialService {
 
-  URL = 'http://localhost:8080/social/'
+  URL = 'https://portfoliobackend-production-cb23.up.railway.app/social/'
 
   constructor(private httpClient:HttpClient) { }
 

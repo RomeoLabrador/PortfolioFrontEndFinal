@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DesplazamientoService } from 'src/app/components/desplazamiento.service';
 import { Estudios } from 'src/app/model/estudios';
 import { EstudiosService } from 'src/app/service/estudios.service';
+import { ImageService } from 'src/app/service/image.service';
 
 @Component({
   selector: 'app-est-token-edit',
@@ -15,7 +16,7 @@ export class EstTokenEditComponent implements OnInit {
   descripcionE:string;
   img:string;
 
-  constructor(protected servicio:DesplazamientoService,private estudiosS:EstudiosService, private router:Router) { }
+  constructor(protected servicio:DesplazamientoService,private estudiosS:EstudiosService, private router:Router, public imageService:ImageService, private activatedRouter:ActivatedRoute) { }
 
 
   ngOnInit(): void {
@@ -23,6 +24,7 @@ export class EstTokenEditComponent implements OnInit {
 
   onCreate():void{
     const estudio = new Estudios(this.nombreE, this.descripcionE,this.img);
+    estudio.img = this.imageService.imagenes.pop();
     this.estudiosS.save(estudio).subscribe(
       data => {
         alert("Se creo el estudio");
@@ -33,5 +35,13 @@ export class EstTokenEditComponent implements OnInit {
       }
     )
   }
+
+  uploadImage($event:any){
+    const id = this.activatedRouter.snapshot.params['id'];
+    const name = "foto_";
+    this.imageService.uploadImage($event,name) 
+
+  }
+
 
 }
