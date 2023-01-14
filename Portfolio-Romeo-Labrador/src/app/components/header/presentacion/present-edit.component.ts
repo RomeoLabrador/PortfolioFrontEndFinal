@@ -27,7 +27,7 @@ export class PresentEditComponent implements OnInit {
 
   onUpdate():void{
     const id = this.activatedRouter.snapshot.params['id']
-    this.presentacion.img = this.imageService.imagenes[0];
+    this.presentacion.img = this.imageService.imagenes.pop();
     this.presentacionS.update(id,this.presentacion).subscribe(
       data => {
         this.router.navigate(['']);
